@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Сброс стилей для списков */
+  ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Сброс стилей для ссылок */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Сброс стилей для заголовков */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  /* Сброс стилей для параграфов */
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Сброс стилей для изображений */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+//-------------------------------------------------------------------------------//
+
+$font_razmer: 4vw;
+$font_styllle:  'Gloria Hallelujah', cursive;
+// @media only screen and (max-width: 600px) {
+//   .days, .hours, .min, .sec {
+//     font-size: 8vw;
+//   }
+  
+//   .item {
+//     font-size: 4vw;
+//   }
+  
+//   .datetime_input {
+//     width: 50vw;
+//     font-size: 4vw;
+//   }
+  
+//   .btn1, .btn2 {
+//     font-size: 4vw;
+//     padding: 3vw 6vw;
+//     background-color: rgb(227, 25, 25) ;
+//   }
+// }
+
+
+.main_section {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    .container {
+        text-align: center;
+    }
+    .timer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .days, .hours, .min, .sec{
+        
+        font-size: $font_razmer;
+        font-family: $font_styllle;
+        font-weight: 500;
+    }
+
+    .time_item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .time_item:not(:last-child){
+          margin-right: 5vw;
+        }
+    }
+    .item{
+        margin-top: 1vw;
+        ;
+        font-weight: 500;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -0.2vw;
+            left: 0;
+            width: 100%;
+            height: 0.2vw;
+            background-color: rgb(3, 83, 98);
+        }font-size: 1.5vw
+    }
+
+    .over{
+      display: none;
+      font-size: $font_razmer;
+      justify-content: center;
+    }
+
+    .input_section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5vh;
+    }
+    .datetime_input{
+      width: 15vw;
+      padding: 1vh;
+      font-size: 2vh;
+      background-color: #1beba6;
+      margin-right: 3vw;
+      font-family: $font_styllle;
+      font-size: 1.3vw;
+      box-shadow: 0 6px 7px rgba(0, 0, 0, 0.6);
+    }
+    .btn1, .btn2{
+      padding:1vh 2vw 1vh 2vw;
+      background-color: #1beba6;
+      cursor: pointer;
+      font-family: $font_styllle;
+      font-size: 1.3vw;
+      box-shadow: 0 6px 7px rgba(0, 0, 0, 0.6);
+    }
+    .btn1:hover, .btn2:hover{
+      background-color: rgba(0, 0, 0, 0.3);
+      
+    }
+    .btn1, .btn2:not(:last-child){
+      margin-right: 3vw
+    }
+    @media only screen and (max-width: 600px){
+      .btn1, .btn2 {
+        padding:1.5vh 5vw 1.5vh 5vw;  
+        font-size: 4vw;
+      }
+      .datetime_input{
+        width: 40vw;
+        padding: 1.5vh;
+        font-size: 2vh;
+      }
+      .item {
+        font-size: 5vw;
+      }
+      .time_item:not(:last-child){
+        margin-right: 15vw;
+      }
+      .days, .hours, .min, .sec {
+        font-size: 9vw;
+      }
+      .over{
+        font-size: 9vw;
+      }
+      }
+}
